@@ -26,8 +26,8 @@ print(df["Pclass"][df["Fare"]>500])"""
 df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
-df.loc[829,"Embarked"]=1
-df.loc[61,"Embarked"]=1
+df.loc[829,"Embarked"]=2
+df.loc[61,"Embarked"]=2
 df['Age'].fillna(23.826033707865168, inplace=True)
 X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age']]
 y=df['Survived']

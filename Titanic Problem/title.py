@@ -34,7 +34,6 @@ for name in df['Name']:
 
 
 Title_Dictionary = {
-    "Dr": "Officer",
     "Mr" : "Mr",
     "Mrs" : "Mirs",
     "Miss" : "Miss",
@@ -50,7 +49,6 @@ df['Title']=df['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
 
 # In[110]:
 
-print(df.loc[766,"Age"],df.loc[766,"Name"])
 
 print(df["Title"].unique())
 for i in df["Title"]:
