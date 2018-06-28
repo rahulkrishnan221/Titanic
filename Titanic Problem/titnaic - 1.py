@@ -6,6 +6,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 df=pd.read_csv("train.csv")
+df['Child']=df['Age']
+x1=df.where(df['Child']<16)
+x1['Child'].fillna(0,inplace=True)
+y1=x1.where(x1['Child']<2)
+y1['Child'].fillna(1,inplace=True)
+df['Child']=y1['Child']
+
 titles = set()
 for name in df['Name']:
     titles.add(name.split(',')[1].split('.')[0].strip())
@@ -54,13 +61,19 @@ df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=1
 df.loc[61,"Embarked"]=1
 df['Age'].fillna(23.826033707865168, inplace=True)
-X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title']]
+X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child']]
 y=df['Survived']
 
 knn=KNeighborsClassifier(n_neighbors=3)
 knn.fit(X,y)
 
 df1=pd.read_csv("test.csv")
+df1['Child']=df1['Age']
+x4=df.where(df1['Child']<16)
+x4['Child'].fillna(0,inplace=True)
+y4=x4.where(x4['Child']<2)
+y4['Child'].fillna(1,inplace=True)
+df1['Child']=y4['Child']
 titles = set() ###
 for name in df1['Name']:
     titles.add(name.split(',')[1].split('.')[0].strip())
@@ -70,7 +83,7 @@ df1["Sex"]=df1["Sex"].replace(to_replace="male",value=0)
 df1["Sex"]=df1["Sex"].replace(to_replace="female",value=1)
 df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df1['Age'].fillna(24.10191846522782, inplace=True)
-test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title']]
+test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
 
@@ -82,7 +95,7 @@ klu = random_forest.predict(test)
 
 
 
-print(df)
+
 
 
 ids=df1['PassengerId'].values

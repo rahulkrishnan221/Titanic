@@ -5,6 +5,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV, cross_val_score
 import csv as csv
 
-train = pd.read_csv('train.csv')
-test = pd.read_csv('test.csv')
-features = ['Age', 'SibSp','Parch','Fare','male','embarked_Q','embarked_S','Pclass_2', 'Pclass_3']
+df = pd.read_csv('train.csv')
+df['Child']=df['Age']
+x1=df.where(df['Child']<16)
+x1['Child'].fillna(0,inplace=True)
+y1=x1.where(x1['Child']<2)
+y1['Child'].fillna(1,inplace=True)
+df['Child']=y1['Child']
+print(df['Child'])
+
+
+
