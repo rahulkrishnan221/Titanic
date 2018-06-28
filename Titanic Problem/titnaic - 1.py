@@ -9,8 +9,8 @@ df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 
-df['Fare1']=df[df['Fare']>=51]
-df['Fare2']=df[df['Fare']<51]
+df['Fare1']=df[df['Fare']>51.0]
+df['Fare2']=df[df['Fare']<51.0]
 X=df[['Pclass','Fare','Sex','Parch','SibSp']]
 y=df['Survived']
 print(df)
