@@ -59,8 +59,25 @@ for i,j in check_copy.iterrows():
         ct+=1
         
 print(c/ct)
-    
-
+df["Age"]=df["Age"].fillna(1000)
+lt=df["Title"].values.tolist()
+la=df["Age"].values.tolist()
+print(len(lt),len(la))
+fl=[]
+for i,j in zip(la,lt):
+    if i==1000:
+        if j=="Master":
+            fl.append(4.65)
+        elif j=="Mrs":
+            fl.append(35.89)
+        elif j=="Miss":
+            fl.append(21.77)
+        elif j=="Mr":
+            fl.append(32.3)
+    else:
+        fl.append(i)
+df["Age_new"]=pd.DataFrame({'col':fl})
+print(df)
 # In[116]:
 
 
