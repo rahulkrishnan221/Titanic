@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 df=pd.read_csv("train.csv")
-"""
-df.plot(x='Fare',y='Survived',kind='scatter')
+
+df.plot(x='Fare',y='Pclass',kind='scatter')
 plt.show()
+"""
 print(df.columns)
 from mpl_toolkits.mplot3d import Axes3D
 fig = plt.figure()
