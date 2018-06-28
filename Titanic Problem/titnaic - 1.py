@@ -6,6 +6,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 df=pd.read_csv("train.csv")
+
+df['Cabin'].fillna('U', inplace=True)
+df['Cabin'] = df['Cabin'].apply(lambda x: x[0])
+df['Cabin'].unique()
+
+
 df['Child']=df['Age']
 x1=df.where(df['Child']<16)
 x1['Child'].fillna(0,inplace=True)
@@ -34,6 +40,18 @@ plt.show()
 xd=df[(df["Survived"]==1 )& (df["Sex"]=="female")]
 print(xd.count())
 print(df["Pclass"][df["Fare"]>500])"""
+replacement1 = {
+    'T': 0,
+    'U': 1,
+    'A': 2,
+    'G': 3,
+    'C': 4,
+    'F': 5,
+    'B': 6,
+    'E': 7,
+    'D': 8
+}
+
 replacement = {
     'Don': 0,
     'Rev': 0,
@@ -55,19 +73,27 @@ replacement = {
     'Dona':8
 }
 df['Title']=df.Title.map(replacement)
+df['Cabin'].fillna('U', inplace=True)
+df['Cabin'] = df['Cabin'].apply(lambda x: x[0])
+
+df['Cabin'] = df['Cabin'].apply(lambda x: replacement1.get(x))
 df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=1
 df.loc[61,"Embarked"]=1
 df['Age'].fillna(23.826033707865168, inplace=True)
-X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child']]
+X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child','Cabin']]
 y=df['Survived']
 
 knn=KNeighborsClassifier(n_neighbors=3)
 knn.fit(X,y)
 
 df1=pd.read_csv("test.csv")
+df1['Cabin'].fillna('U', inplace=True)
+df1['Cabin'] = df1['Cabin'].apply(lambda x: x[0])
+
+df1['Cabin'] = df1['Cabin'].apply(lambda x: replacement1.get(x))
 df1['Child']=df1['Age']
 x4=df.where(df1['Child']<16)
 x4['Child'].fillna(0,inplace=True)
@@ -83,7 +109,7 @@ df1["Sex"]=df1["Sex"].replace(to_replace="male",value=0)
 df1["Sex"]=df1["Sex"].replace(to_replace="female",value=1)
 df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df1['Age'].fillna(24.10191846522782, inplace=True)
-test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child']]
+test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age','Title','Child','Cabin']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
 
