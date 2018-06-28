@@ -30,28 +30,14 @@ for name in df['Name']:
 
 
 
-
 # In[108]:
 
 
 Title_Dictionary = {
-    "Capt": "Officer",
-    "Col": "Officer",
-    "Major": "Officer",
-    "Jonkheer": "Other",
-    "Don": "Other",
-    "Sir" : "Other",
-    "Dr": "Officer",
-    "Rev": "Other",
-    "the Countess":"Other",
-    "Mme": "Mirs",
-    "Mlle": "Miss",
-    "Ms": "Mirs",
     "Mr" : "Mr",
     "Mrs" : "Mirs",
     "Miss" : "Miss",
     "Master" : "Master",
-    "Lady" : "Other"
 }
 
 
@@ -64,13 +50,15 @@ df['Title']=df['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
 # In[110]:
 
 
-
-
+print(df["Title"].unique())
+for i in df["Title"]:
+    if i=="Rev":
+        print(1)
 
 # In[116]:
 
 
-df['Title']=df.Title.map(Title_Dictionary)
+#df['Title']=df.Title.map(Title_Dictionary)
 
 
 # In[119]:
@@ -99,7 +87,6 @@ df2=df[df['Title'].str.contains("Mrs")]
 
 
 df3=df[['Age','Title']]
-print(df3)
 
 
 # In[118]:
