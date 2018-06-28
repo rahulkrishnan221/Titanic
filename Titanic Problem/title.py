@@ -49,11 +49,17 @@ df['Title']=df['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
 
 # In[110]:
 
-
-print(df["Title"].unique())
-for i in df["Title"]:
-    if i=="Rev":
-        print(1)
+check_copy=df[['Age','Title']].copy()
+check_copy=check_copy.dropna()
+c=0
+ct=0
+for i,j in check_copy.iterrows():
+    if(j["Title"]=="Miss"):
+        c=c+j["Age"]
+        ct+=1
+        
+print(c/ct)
+    
 
 # In[116]:
 
