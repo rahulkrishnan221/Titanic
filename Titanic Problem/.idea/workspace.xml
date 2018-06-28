@@ -20,14 +20,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/titnaic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="39" column="124" lean-forward="true" selection-start-line="39" selection-start-column="124" selection-end-line="39" selection-end-column="124" />
+            <state relative-caret-position="490">
+              <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="title.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/title.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
             </state>
           </provider>
         </entry>
@@ -73,10 +82,11 @@
         <option value="$PROJECT_DIR$/ttt.py" />
         <option value="$PROJECT_DIR$/titnaic - 1.py" />
         <option value="$PROJECT_DIR$/newj.py" />
+        <option value="$PROJECT_DIR$/title.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="627" />
     <option name="y" value="106" />
     <option name="width" value="1105" />
@@ -117,7 +127,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.titnaic">
+  <component name="RunManager" selected="Python.title">
     <configuration name="Titanic Problem" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Titanic Problem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -147,6 +157,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/newj.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="title" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Titanic Problem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/title.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -193,9 +221,11 @@
       <item itemvalue="Python.titnaic" />
       <item itemvalue="Python.titnaic - 1" />
       <item itemvalue="Python.newj" />
+      <item itemvalue="Python.title" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.title" />
         <item itemvalue="Python.titnaic" />
         <item itemvalue="Python.newj" />
         <item itemvalue="Python.titnaic - 1" />
@@ -348,11 +378,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/titnaic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="39" column="124" lean-forward="true" selection-start-line="39" selection-start-column="124" selection-end-line="39" selection-end-column="124" />
+        <state relative-caret-position="490">
+          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/title.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>

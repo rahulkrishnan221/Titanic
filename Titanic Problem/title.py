@@ -28,7 +28,7 @@ for name in df['Name']:
 # In[107]:
 
 
-print(titles)
+
 
 
 # In[108]:
@@ -64,7 +64,7 @@ df['Title']=df['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
 # In[110]:
 
 
-df
+
 
 
 # In[116]:
@@ -76,7 +76,7 @@ df['Title']=df.Title.map(Title_Dictionary)
 # In[119]:
 
 
-df2=df1[df1['Title'].str.contains("Mrs")]
+df2=df[df['Title'].str.contains("Mrs")]
 
 
 # In[139]:
