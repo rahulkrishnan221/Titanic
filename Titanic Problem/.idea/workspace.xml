@@ -23,8 +23,8 @@
       <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/titnaic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+            <state relative-caret-position="377">
+              <caret line="61" column="143" selection-start-line="61" selection-start-column="143" selection-end-line="61" selection-end-column="143" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -34,9 +34,7 @@
       </file>
       <file leaf-file-name="submission.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/submission.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13937" />
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="title.py" pinned="false" current-in-tab="false">
@@ -54,7 +52,7 @@
       <file leaf-file-name="titnaic - 1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/titnaic - 1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-292">
+            <state>
               <caret selection-end-line="4" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -93,6 +91,7 @@
         <option value="$PROJECT_DIR$/titnaic - 1.py" />
         <option value="$PROJECT_DIR$/newj.py" />
         <option value="$PROJECT_DIR$/title.py" />
+        <option value="$PROJECT_DIR$/submission.csv" />
         <option value="$PROJECT_DIR$/titnaic.py" />
       </list>
     </option>
@@ -259,10 +258,10 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11393229" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11393229" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37891737" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.092447914" side_tool="true" visible="true" weight="0.2735043" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.90755206" visible="true" weight="0.2735043" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,16 +375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/titnaic - 1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-292">
-          <caret selection-end-line="4" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/title.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -396,15 +385,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/submission.csv">
+    <entry file="file://$PROJECT_DIR$/titnaic - 1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13937" />
+        <state>
+          <caret selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/submission.csv">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/titnaic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+        <state relative-caret-position="377">
+          <caret line="61" column="143" selection-start-line="61" selection-start-column="143" selection-end-line="61" selection-end-column="143" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
