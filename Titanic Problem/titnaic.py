@@ -39,8 +39,7 @@ test=df1[['Pclass','Fare','Sex','SibSp','Parch']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
 print(p)
-"""
+
 for i in range(0,df1["Pclass"].count()):
     prediction=knn.predict([[test.loc[i]["Pclass"],test.loc[i]["Fare"],test.loc[i]["Sex"],test.loc[i]["SibSp"],test.loc[i]["Parch"]]])
     print(test.loc[i]["Pclass"],test.loc[i]["Fare"],test.loc[i]["Sex"],test.loc[i]["SibSp"],test.loc[i]["Parch"],prediction)
-"""
