@@ -20,11 +20,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/titnaic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+            <state relative-caret-position="187">
+              <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -32,11 +32,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="title.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="submission.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/submission.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-13937" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="title.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/title.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="218">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+              <folding>
+                <element signature="e#31#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,14 +93,14 @@
         <option value="$PROJECT_DIR$/titnaic - 1.py" />
         <option value="$PROJECT_DIR$/newj.py" />
         <option value="$PROJECT_DIR$/title.py" />
+        <option value="$PROJECT_DIR$/titnaic.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="627" />
-    <option name="y" value="106" />
-    <option name="width" value="1105" />
-    <option name="height" value="930" />
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -127,7 +137,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.title">
+  <component name="RunManager" selected="Python.titnaic">
     <configuration name="Titanic Problem" type="JupiterNotebook" factoryName="Jupyter Notebook">
       <module name="Titanic Problem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -225,8 +235,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.title" />
         <item itemvalue="Python.titnaic" />
+        <item itemvalue="Python.title" />
         <item itemvalue="Python.newj" />
         <item itemvalue="Python.titnaic - 1" />
       </list>
@@ -249,10 +259,10 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21223958" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11393229" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37891737" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.37891737" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,20 +386,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/titnaic.py">
+    <entry file="file://$PROJECT_DIR$/title.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        <state relative-caret-position="218">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#31#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/title.py">
+    <entry file="file://$PROJECT_DIR$/submission.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="-13937" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/titnaic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="38" column="57" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

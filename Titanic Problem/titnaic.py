@@ -1,4 +1,5 @@
 import pandas as pd
+import csv as csv
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -23,22 +24,28 @@ print(df["Pclass"][df["Fare"]>500])"""
 df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
-#df.loc[829,"Embarked"]=1
-#df.loc[61,"Embarked"]=1
-X=df[['Pclass','Fare','Sex','SibSp','Parch']]
+df.loc[829,"Embarked"]=1
+df.loc[61,"Embarked"]=1
+X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked']]
 y=df['Survived']
-X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
+
 knn=KNeighborsClassifier(n_neighbors=3)
 knn.fit(X,y)
-print(knn.score(X_test,y_test))
+
 df1=pd.read_csv("test.csv")
 df1["Sex"]=df1["Sex"].replace(to_replace="male",value=0)
 df1["Sex"]=df1["Sex"].replace(to_replace="female",value=1)
 df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
-test=df1[['Pclass','Fare','Sex','SibSp','Parch']]
+test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
-print(p)
+ids=df1['PassengerId'].values
+submission_file=open('submission.csv','w')
+open_file_object= csv.writer(submission_file)
+open_file_object.writerow(["PassengerId","Survived"])
+open_file_object.writerows(zip(ids, p))
+submission_file.close()
+
 """
 for i in range(0,df1["Pclass"].count()):
     prediction=knn.predict([[test.loc[i]["Pclass"],test.loc[i]["Fare"],test.loc[i]["Sex"],test.loc[i]["SibSp"],test.loc[i]["Parch"]]])
