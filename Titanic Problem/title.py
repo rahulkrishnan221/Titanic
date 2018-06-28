@@ -8,7 +8,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-df=pd.read_csv("train.csv")
+df=pd.read_csv("test.csv")
 
 
 # In[105]:
@@ -54,7 +54,7 @@ check_copy=check_copy.dropna()
 c=0
 ct=0
 for i,j in check_copy.iterrows():
-    if(j["Title"]=="Miss"):
+    if(j["Title"]=="Master"):
         c=c+j["Age"]
         ct+=1
         
@@ -77,7 +77,7 @@ for i,j in zip(la,lt):
     else:
         fl.append(i)
 df["Age_new"]=pd.DataFrame({'col':fl})
-print(df)
+#print(df)
 # In[116]:
 
 
