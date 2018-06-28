@@ -39,6 +39,7 @@ df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
+<<<<<<< HEAD
 ids=df1['PassengerId'].values
 submission_file=open('submission.csv','w')
 open_file_object= csv.writer(submission_file)
@@ -47,7 +48,10 @@ open_file_object.writerows(zip(ids, p))
 submission_file.close()
 
 """
+=======
+print(p)
+
+>>>>>>> d2a4a42ce1fdc00f2b59c2687073833f22ba9a8e
 for i in range(0,df1["Pclass"].count()):
     prediction=knn.predict([[test.loc[i]["Pclass"],test.loc[i]["Fare"],test.loc[i]["Sex"],test.loc[i]["SibSp"],test.loc[i]["Parch"]]])
     print(test.loc[i]["Pclass"],test.loc[i]["Fare"],test.loc[i]["Sex"],test.loc[i]["SibSp"],test.loc[i]["Parch"],prediction)
-"""
