@@ -3,6 +3,7 @@ import csv as csv
 from family import process_family
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
 
 df=pd.read_csv("train.csv")
@@ -154,8 +155,11 @@ X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamil
 y=df['Survived']
 
 
+X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
 
-
+random_forest1 = RandomForestClassifier(n_estimators=1000)
+random_forest1.fit(X_train, y_train)
+print(random_forest1.score(X_test,y_test))
 
 #12
 df1=pd.read_csv("test.csv")
@@ -271,7 +275,7 @@ test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeF
 
 
 #22
-random_forest = RandomForestClassifier(n_estimators=100)
+random_forest = RandomForestClassifier(n_estimators=1000)
 random_forest.fit(X, y)
 klu = random_forest.predict(test)
 
