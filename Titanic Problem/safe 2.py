@@ -1,11 +1,13 @@
 import pandas as pd
 import csv as csv
-
+from ticketpre import ticket
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
 
 df=pd.read_csv("train.csv")
+
+#0
 
 
 
@@ -148,7 +150,6 @@ df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
 
 
 #11
-
 X=df[['Pclass','Fare','Sex','SibSp','Parch','Age_new','Title','Child','Cabin']]
 y=df['Survived']
 

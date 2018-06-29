@@ -6,7 +6,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 
 df=pd.read_csv("train.csv")
+
+df['Cabin'].fillna('U', inplace=True)
+df['Cabin'] = df['Cabin'].apply(lambda x: x[0])
+df['Cabin'].unique()
+
+
 df['Title']=df['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
+
+
 df["Age"]=df["Age"].fillna(1000)
 lt=df["Title"].values.tolist()
 la=df["Age"].values.tolist()
@@ -24,37 +32,29 @@ for i,j in zip(la,lt):
     else:
         fl.append(i)
 df["Age_new"]=pd.DataFrame({'col':fl})
-"""
-df.plot(x='Pclass',y='Survived',kind='scatter')
-plt.show()
-print(df.columns)
-from mpl_toolkits.mplot3d import Axes3D
-fig = plt.figure()
-ax = fig.add_subplot(111, projection = '3d')
-ax.scatter(df['Fare'], df['Pclass'], df['Age'], c = df['Survived'], marker = 'o', s=100)
-ax.set_xlabel('Fare')
-ax.set_ylabel('Class')
-ax.set_zlabel('Age')
-plt.show()
-"""
-"""print(df["Sex"])
-xd=df[(df["Survived"]==1 )& (df["Sex"]=="female")]
-print(xd.count())
-print(df["Pclass"][df["Fare"]>500])"""
+
+
+
 df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=2
 df.loc[61,"Embarked"]=2
+
+
 X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new']]
 y=df['Survived']
 #X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
-knn=KNeighborsClassifier(n_neighbors=3)
-knn.fit(X,y)
+
+
+
 
 df1=pd.read_csv("test.csv")
 
 df1['Title']=df1['Name'].map(lambda name:name.split(',')[1].split('.')[0].strip())
+
+
+
 df1["Age"]=df1["Age"].fillna(1000)
 lt1=df1["Title"].values.tolist()
 la1=df1["Age"].values.tolist()
@@ -75,13 +75,18 @@ for i,j in zip(la1,lt1):
         fl1.append(i)
 df1["Age_new"]=pd.DataFrame({'col':fl1})
 
+df1.loc[152,"Fare"]=10
+
 
 df1["Sex"]=df1["Sex"].replace(to_replace="male",value=0)
 df1["Sex"]=df1["Sex"].replace(to_replace="female",value=1)
 df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
+
+
+
 test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new']]
-test.loc[152,"Fare"]=10
-p=knn.predict(test)
+
+
 
 random_forest = RandomForestClassifier(n_estimators=100)
 random_forest.fit(X, y)
