@@ -1,14 +1,15 @@
 import pandas as pd
 import csv as csv
-
+from family import process_family
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
 
 df=pd.read_csv("train.csv")
 
+#0
 
-
+df=process_family(df)
 #1
 df['Cabin'].fillna('U', inplace=True)
 df['Cabin'] = df['Cabin'].apply(lambda x: x[0])
@@ -148,7 +149,8 @@ df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
 
 
 #11
-X=df[['Pclass','Fare','Sex','SibSp','Parch','Age_new','Title','Child','Cabin']]
+
+X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
 y=df['Survived']
 
 
@@ -158,7 +160,8 @@ y=df['Survived']
 #12
 df1=pd.read_csv("test.csv")
 
-
+#12.1
+df1=process_family(df1)
 
 #13
 df1['Cabin'].fillna('U', inplace=True)
@@ -263,12 +266,12 @@ df1['Cabin'] = StandardScaler().fit_transform(df1['Cabin'].values.reshape(-1, 1)
 
 
 #21
-test=df1[['Pclass','Fare','Sex','SibSp','Parch','Age_new','Title','Child','Cabin']]
+test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
 
 
 
 #22
-random_forest = RandomForestClassifier(n_estimators=1000)
+random_forest = RandomForestClassifier(n_estimators=100)
 random_forest.fit(X, y)
 klu = random_forest.predict(test)
 
@@ -279,7 +282,7 @@ klu = random_forest.predict(test)
 
 #23
 ids=df1['PassengerId'].values
-submission_file=open('submission.csv','w')
+submission_file=open('submission66.csv','w')
 open_file_object= csv.writer(submission_file)
 open_file_object.writerow(["PassengerId","Survived"])
 open_file_object.writerows(zip(ids, klu))#here change klu to p to print  values and change back to klu to print random forest prediction values
