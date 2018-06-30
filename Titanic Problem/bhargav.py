@@ -3,6 +3,8 @@ import csv as csv
 from family import process_family
 from ageband import age_band
 from sex import sex
+from femparch import femparch
+from richpoor import rich
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
@@ -89,6 +91,12 @@ replacement = {
     'the Countess': 17,
     'Dona':18
 }
+#4.1
+
+df=rich(df)
+
+
+
 
 
 #5
@@ -155,22 +163,16 @@ df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
 df['Embarked'] = StandardScaler().fit_transform(df['Embarked'].values.reshape(-1, 1))
 
 
+df=femparch(df)
+
 
 #11
 
-X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+X=df[['Pclass','Fare','Sex','Age_new','Title','Single','female_alive1''Cabin','SmallFamily','LargeFamily','rich_master','master_freesib']]
 y=df['Survived']
-"""
 
 
-<<<<<<< HEAD
-random_forest1 = RandomForestClassifier(n_estimators=1000)
-random_forest1.fit(X_train, y_train)
-print(random_forest.score(X_test,y_test))
-"""
-=======
 
->>>>>>> bd5ade029334623276f0f927bf2c2f3163a6dc65
 #12
 df1=pd.read_csv("test.csv")
 
@@ -217,6 +219,12 @@ df1["Age_new"]=pd.DataFrame({'col':fl1})
 #15.1
 df1=age_band(df1)
 
+
+
+#15.2
+
+
+df1=rich(df1)
 
 #16
 df1['Title']=df1.Title.map(replacement)
@@ -277,7 +285,10 @@ df1['Cabin'] = StandardScaler().fit_transform(df1['Cabin'].values.reshape(-1, 1)
 df1['Embarked'] = StandardScaler().fit_transform(df1['Embarked'].values.reshape(-1, 1))
 
 #21
-test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+df1=femparch(df1)
+
+
+test=df1[['Pclass','Fare','Sex','Age_new','female_alive1','Title','Single','Cabin','SmallFamily','LargeFamily','rich_master','master_freesib']]
 
 
 
