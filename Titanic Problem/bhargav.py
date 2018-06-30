@@ -153,14 +153,14 @@ df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
 
 X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
 y=df['Survived']
-
+"""
 
 X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
 
 random_forest1 = RandomForestClassifier(n_estimators=1000)
 random_forest1.fit(X_train, y_train)
-print(random_forest1.score(X_test,y_test))
-
+print(random_forest.score(X_test,y_test))
+"""
 #12
 df1=pd.read_csv("test.csv")
 
