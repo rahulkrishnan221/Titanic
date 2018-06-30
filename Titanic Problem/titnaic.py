@@ -24,7 +24,39 @@ for i,j in zip(la,lt):
     else:
         fl.append(i)
 df["Age_new"]=pd.DataFrame({'col':fl})
+
 """
+replacement = {
+    'Don': 1,
+    'Rev': 2,
+    'Jonkheer': 3,
+    'Capt': 4,
+    'Mr': 5,
+    'Dr': 6,
+    'Col': 7,
+    'Major': 8,
+    'Master': 9,
+    'Miss': 10,
+    'Mrs': 11,
+    'Mme': 12,
+    'Ms': 13,
+    'Mlle': 15,
+    'Sir': 14,
+    'Lady': 16,
+    'the Countess': 17,
+    'Dona':18
+}
+df['Title']=df.Title.map(replacement)
+
+from sklearn.preprocessing import StandardScaler
+df['Fare'] = StandardScaler().fit_transform(df['Fare'].values.reshape(-1, 1))
+df['Age_new'] = StandardScaler().fit_transform(df['Age_new'].values.reshape(-1, 1))
+df['Parch'] = StandardScaler().fit_transform(df['Parch'].values.reshape(-1, 1))
+df['SibSp'] = StandardScaler().fit_transform(df['SibSp'].values.reshape(-1, 1))
+df['Pclass'] = StandardScaler().fit_transform(df['Pclass'].values.reshape(-1, 1))
+df['Title'] = StandardScaler().fit_transform(df['Title'].values.reshape(-1, 1))
+df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
+
 df.plot(x='Pclass',y='Survived',kind='scatter')
 plt.show()
 print(df.columns)
@@ -82,10 +114,10 @@ df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new']]
 test.loc[152,"Fare"]=10
 p=knn.predict(test)
-
+X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
 random_forest = RandomForestClassifier(n_estimators=100)
 random_forest.fit(X, y)
-#print(random_forest.score(X_test,y_test))
+print(random_forest.score(X_test,y_test))
 klu = random_forest.predict(test)
 
 
