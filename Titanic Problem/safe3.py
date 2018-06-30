@@ -1,11 +1,8 @@
 import pandas as pd
 import csv as csv
 from family import process_family
-from ageband import age_band
-from sex import sex
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
-
 
 
 df=pd.read_csv("train.csv")
@@ -17,6 +14,14 @@ df=process_family(df)
 df['Cabin'].fillna('U', inplace=True)
 df['Cabin'] = df['Cabin'].apply(lambda x: x[0])
 df['Cabin'].unique()
+
+#2
+df['Child']=df['Age']
+x1=df.where(df['Child']<16)
+x1['Child'].fillna(0,inplace=True)
+y1=x1.where(x1['Child']<2)
+y1['Child'].fillna(1,inplace=True)
+df['Child']=y1['Child']
 
 
 
@@ -43,16 +48,6 @@ for i,j in zip(la,lt):
         fl.append(i)
 df["Age_new"]=pd.DataFrame({'col':fl})
 
-#3.1
-'''df['Child']=df['Age_new']
-x1=df.where(df['Child']<18)
-x1['Child'].fillna(0,inplace=True)
-y1=x1.where(x1['Child']<2)
-y1['Child'].fillna(1,inplace=True)
-df['Child']=y1['Child']
-'''
-df=age_band(df)
-print(df)
 
 #4
 replacement1 = {
@@ -106,8 +101,7 @@ df['Cabin'] = df['Cabin'].apply(lambda x: replacement1.get(x))
 df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 
-df=sex(df)
-print(df)
+
 #8
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=1
@@ -158,19 +152,13 @@ df['Embarked'] = StandardScaler().fit_transform(df['Embarked'].values.reshape(-1
 
 #11
 
-X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+X=df[['Pclass','Fare','Sex','Age_new','Title','Embarked','Single','SmallFamily','LargeFamily']]
 y=df['Survived']
-"""
 
 
-<<<<<<< HEAD
-random_forest1 = RandomForestClassifier(n_estimators=1000)
-random_forest1.fit(X_train, y_train)
-print(random_forest.score(X_test,y_test))
-"""
-=======
 
->>>>>>> bd5ade029334623276f0f927bf2c2f3163a6dc65
+
+
 #12
 df1=pd.read_csv("test.csv")
 
@@ -185,6 +173,13 @@ df1['Cabin'] = df1['Cabin'].apply(lambda x: replacement1.get(x))
 
 
 
+#14
+df1['Child']=df1['Age']
+x4=df.where(df1['Child']<16)
+x4['Child'].fillna(0,inplace=True)
+y4=x4.where(x4['Child']<2)
+y4['Child'].fillna(1,inplace=True)
+df1['Child']=y4['Child']
 
 
 #15
@@ -214,10 +209,6 @@ for i,j in zip(la1,lt1):
 df1["Age_new"]=pd.DataFrame({'col':fl1})
 
 
-#15.1
-df1=age_band(df1)
-
-
 #16
 df1['Title']=df1.Title.map(replacement)
 
@@ -230,7 +221,7 @@ df1["Embarked"]=df1["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 
 
 
-df1=sex(df1)
+
 #18
 replacement33 = {
     9: 0,
@@ -277,12 +268,12 @@ df1['Cabin'] = StandardScaler().fit_transform(df1['Cabin'].values.reshape(-1, 1)
 df1['Embarked'] = StandardScaler().fit_transform(df1['Embarked'].values.reshape(-1, 1))
 
 #21
-test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','Embarked','SmallFamily','LargeFamily']]
 
 
 
 #22
-random_forest = RandomForestClassifier(n_estimators=10000)
+random_forest = RandomForestClassifier(n_estimators=100)
 random_forest.fit(X, y)
 klu = random_forest.predict(test)
 
@@ -293,7 +284,7 @@ klu = random_forest.predict(test)
 
 #23
 ids=df1['PassengerId'].values
-submission_file=open('submission.csv','w')
+submission_file=open('submission66.csv','w')
 open_file_object= csv.writer(submission_file)
 open_file_object.writerow(["PassengerId","Survived"])
 open_file_object.writerows(zip(ids, klu))#here change klu to p to print  values and change back to klu to print random forest prediction values
