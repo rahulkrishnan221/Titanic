@@ -98,7 +98,6 @@ df=rich(df)
 
 
 
-
 #5
 df['Title']=df.Title.map(replacement)
 
@@ -115,7 +114,7 @@ df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 
 df=sex(df)
-print(df)
+
 #8
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=1
@@ -163,12 +162,12 @@ df['Cabin'] = StandardScaler().fit_transform(df['Cabin'].values.reshape(-1, 1))
 df['Embarked'] = StandardScaler().fit_transform(df['Embarked'].values.reshape(-1, 1))
 
 
-df=femparch(df)
+
 
 
 #11
 
-X=df[['Pclass','Fare','Sex','Age_new','Title','Single','female_alive1''Cabin','SmallFamily','LargeFamily','rich_master','master_freesib']]
+X=df[['Pclass','Age_new','Fare','Title','Sex','Single','SmallFamily','LargeFamily','rich_master','master_freesib','Cabin']]
 y=df['Survived']
 
 
@@ -226,6 +225,10 @@ df1=age_band(df1)
 
 df1=rich(df1)
 
+
+
+
+
 #16
 df1['Title']=df1.Title.map(replacement)
 
@@ -275,6 +278,7 @@ df1.loc[152,"Fare"]=10.0
 
 
 #20
+
 df1['Fare'] = StandardScaler().fit_transform(df1['Fare'].values.reshape(-1, 1))
 df1['Age_new'] = StandardScaler().fit_transform(df1['Age_new'].values.reshape(-1, 1))
 df1['Parch'] = StandardScaler().fit_transform(df1['Parch'].values.reshape(-1, 1))
@@ -285,10 +289,10 @@ df1['Cabin'] = StandardScaler().fit_transform(df1['Cabin'].values.reshape(-1, 1)
 df1['Embarked'] = StandardScaler().fit_transform(df1['Embarked'].values.reshape(-1, 1))
 
 #21
-df1=femparch(df1)
 
 
-test=df1[['Pclass','Fare','Sex','Age_new','female_alive1','Title','Single','Cabin','SmallFamily','LargeFamily','rich_master','master_freesib']]
+
+test=df1[['Pclass','Age_new','Fare','Title','Sex','Single','SmallFamily','LargeFamily','rich_master','master_freesib','Cabin']]
 
 
 
@@ -304,7 +308,7 @@ klu = random_forest.predict(test)
 
 #23
 ids=df1['PassengerId'].values
-submission_file=open('submission.csv','w')
+submission_file=open('submission1.csv','w')
 open_file_object= csv.writer(submission_file)
 open_file_object.writerow(["PassengerId","Survived"])
 open_file_object.writerows(zip(ids, klu))#here change klu to p to print  values and change back to klu to print random forest prediction values
