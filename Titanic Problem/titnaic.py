@@ -83,9 +83,11 @@ df.loc[61,"Embarked"]=2
 df['Title_rating']=df.Title.map(replacement)
 df.loc[(df.Title=="Master") & (df.Pclass <=2 ),"rich_master"]=1
 df.loc[(df.Title=="Master") & (df.SibSp <=2),"master_freesib"]=1
+df.loc[(df.Parch==0)&(df.Title=="Mrs")&(df.SibSp==1),"female_alive1"]=1
+df["female_alive1"]=df["female_alive1"].fillna(0)
 df["rich_master"]=df["rich_master"].fillna(0)
 df["master_freesib"]=df["master_freesib"].fillna(0)
-X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new','Title_rating','rich_master','master_freesib']]
+X=df[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new','Title_rating','rich_master','master_freesib','female_alive1']]
 y=df['Survived']
 #X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
 #knn=KNeighborsClassifier(n_neighbors=3)
@@ -123,7 +125,9 @@ df1.loc[(df1.Title=="Master") & (df1.Pclass <=2 ),"rich_master"]=1
 df1.loc[(df1.Title=="Master") & (df1.SibSp <=2),"master_freesib"]=1
 df1["rich_master"]=df1["rich_master"].fillna(0)
 df1["master_freesib"]=df1["master_freesib"].fillna(0)
-test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new','Title_rating','rich_master','master_freesib']]
+df1.loc[(df1.Parch==0)&(df1.Title=="Mrs")&(df1.SibSp==1),"female_alive1"]=1
+df1["female_alive1"]=df1["female_alive1"].fillna(0)
+test=df1[['Pclass','Fare','Sex','SibSp','Parch','Embarked','Age_new','Title_rating','rich_master','master_freesib','female_alive1']]
 test.loc[152,"Fare"]=10
 #p=knn.predict(test)
 X_train,X_test,y_train,y_test=train_test_split(X,y,random_state=0)
