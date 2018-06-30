@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="titnaic - 1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/titnaic - 1.py">
+      <file leaf-file-name="titnaic.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/titnaic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4641">
-              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="84">
+              <caret line="79" column="24" selection-start-line="85" selection-end-line="86" selection-end-column="49" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -26,11 +26,29 @@
       <file leaf-file-name="bhargav.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bhargav.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1365">
-              <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+            <state relative-caret-position="-150">
+              <caret line="294" column="53" lean-forward="true" selection-start-line="294" selection-start-column="53" selection-end-line="294" selection-end-column="53" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="femparch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/femparch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="richpoor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/richpoor.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -125,7 +143,6 @@
         <option value="$PROJECT_DIR$/title.py" />
         <option value="$PROJECT_DIR$/submission.csv" />
         <option value="$USER_HOME$/Documents/BlackSquad/kernel.ipynb" />
-        <option value="$PROJECT_DIR$/titnaic.py" />
         <option value="$PROJECT_DIR$/safe.py" />
         <option value="$PROJECT_DIR$/ttt.py" />
         <option value="$PROJECT_DIR$/tickettt.py" />
@@ -140,6 +157,9 @@
         <option value="$PROJECT_DIR$/newj.ipynb" />
         <option value="$PROJECT_DIR$/ageband.py" />
         <option value="$PROJECT_DIR$/sex.py" />
+        <option value="$PROJECT_DIR$/richpoor.py" />
+        <option value="$PROJECT_DIR$/femparch.py" />
+        <option value="$PROJECT_DIR$/titnaic.py" />
         <option value="$PROJECT_DIR$/bhargav.py" />
       </list>
     </option>
@@ -292,7 +312,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="ttt" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="titnaic" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Titanic Problem" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,7 +324,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ttt.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/titnaic.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -313,19 +333,19 @@
     <list>
       <item itemvalue="Jupyter Notebook.Titanic Problem" />
       <item itemvalue="Python.titnaic - 1" />
-      <item itemvalue="Python.ttt" />
       <item itemvalue="Python.safe" />
       <item itemvalue="Python.safe 2" />
       <item itemvalue="Python.bhargav" />
       <item itemvalue="Python.sex" />
+      <item itemvalue="Python.titnaic" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.bhargav" />
+        <item itemvalue="Python.titnaic" />
         <item itemvalue="Python.sex" />
         <item itemvalue="Python.safe 2" />
         <item itemvalue="Python.safe" />
-        <item itemvalue="Python.ttt" />
       </list>
     </recent_temporary>
   </component>
@@ -348,7 +368,7 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11393229" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24088542" side_tool="true" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24088542" side_tool="true" weight="0.30769232" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.75911456" visible="true" weight="0.30769232" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
@@ -369,20 +389,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gender_submission.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="230" selection-start-column="230" selection-end-column="230" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Analysis.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/BlackSquad/kernel.ipynb">
       <provider selected="true" editor-type-id="ipnb-editor">
         <state>
@@ -590,16 +596,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ttt.py" />
     <entry file="file://$PROJECT_DIR$/tickettt.py" />
-    <entry file="file://$PROJECT_DIR$/titnaic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/title.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1533">
@@ -688,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/newj.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/family.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -712,6 +701,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/newj.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/richpoor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/femparch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/titnaic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="79" column="24" selection-start-line="85" selection-end-line="86" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ageband.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -721,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bhargav.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1365">
-          <caret line="127" column="8" lean-forward="true" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="8" />
+        <state relative-caret-position="-150">
+          <caret line="294" column="53" lean-forward="true" selection-start-line="294" selection-start-column="53" selection-end-line="294" selection-end-column="53" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

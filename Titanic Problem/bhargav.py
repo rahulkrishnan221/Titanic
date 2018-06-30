@@ -3,6 +3,8 @@ import csv as csv
 from family import process_family
 from ageband import age_band
 from sex import sex
+from femparch import femparch
+from richpoor import rich
 from sklearn.ensemble import RandomForestClassifier
 import matplotlib.pyplot as plt
 
@@ -89,6 +91,11 @@ replacement = {
     'the Countess': 17,
     'Dona':18
 }
+#4.1
+
+df=rich(df)
+
+
 
 
 #5
@@ -107,7 +114,7 @@ df["Sex"]=df["Sex"].replace(to_replace="male",value=0)
 df["Sex"]=df["Sex"].replace(to_replace="female",value=1)
 
 df=sex(df)
-print(df)
+
 #8
 df["Embarked"]=df["Embarked"].replace(to_replace=['C','S','Q'],value=[1,2,3])
 df.loc[829,"Embarked"]=1
@@ -156,21 +163,15 @@ df['Embarked'] = StandardScaler().fit_transform(df['Embarked'].values.reshape(-1
 
 
 
+
+
 #11
 
-X=df[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+X=df[['Pclass','Age_new','Fare','Title','Sex','Single','SmallFamily','LargeFamily','rich_master','master_freesib','Cabin']]
 y=df['Survived']
-"""
 
 
-<<<<<<< HEAD
-random_forest1 = RandomForestClassifier(n_estimators=1000)
-random_forest1.fit(X_train, y_train)
-print(random_forest.score(X_test,y_test))
-"""
-=======
 
->>>>>>> bd5ade029334623276f0f927bf2c2f3163a6dc65
 #12
 df1=pd.read_csv("test.csv")
 
@@ -216,6 +217,16 @@ df1["Age_new"]=pd.DataFrame({'col':fl1})
 
 #15.1
 df1=age_band(df1)
+
+
+
+#15.2
+
+
+df1=rich(df1)
+
+
+
 
 
 #16
@@ -267,6 +278,7 @@ df1.loc[152,"Fare"]=10.0
 
 
 #20
+
 df1['Fare'] = StandardScaler().fit_transform(df1['Fare'].values.reshape(-1, 1))
 df1['Age_new'] = StandardScaler().fit_transform(df1['Age_new'].values.reshape(-1, 1))
 df1['Parch'] = StandardScaler().fit_transform(df1['Parch'].values.reshape(-1, 1))
@@ -277,7 +289,10 @@ df1['Cabin'] = StandardScaler().fit_transform(df1['Cabin'].values.reshape(-1, 1)
 df1['Embarked'] = StandardScaler().fit_transform(df1['Embarked'].values.reshape(-1, 1))
 
 #21
-test=df1[['Pclass','Fare','Sex','Age_new','Title','Single','SmallFamily','LargeFamily']]
+
+
+
+test=df1[['Pclass','Age_new','Fare','Title','Sex','Single','SmallFamily','LargeFamily','rich_master','master_freesib','Cabin']]
 
 
 
@@ -293,7 +308,7 @@ klu = random_forest.predict(test)
 
 #23
 ids=df1['PassengerId'].values
-submission_file=open('submission.csv','w')
+submission_file=open('submission1.csv','w')
 open_file_object= csv.writer(submission_file)
 open_file_object.writerow(["PassengerId","Survived"])
 open_file_object.writerows(zip(ids, klu))#here change klu to p to print  values and change back to klu to print random forest prediction values
